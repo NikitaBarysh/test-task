@@ -50,7 +50,7 @@ func (s *Service) GetTags(image string) ([]string, error) {
 }
 
 func (s *Service) GetManifest(image, tag string) (*entity.Manifest, error) {
-	url := fmt.Sprintf("http://%s:%s/v2/%s/manifests/%s", s.cfg.DockerRegistryHost, s.cfg.DockerRegistryPort, image, tag) // todo url
+	url := fmt.Sprintf("http://%s:%s/v2/%s/manifests/%s", s.cfg.DockerRegistryHost, s.cfg.DockerRegistryPort, image, tag)
 
 	req, err := http.NewRequest(http.MethodGet, url, nil)
 	if err != nil {
